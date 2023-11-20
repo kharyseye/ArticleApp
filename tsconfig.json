@@ -3,6 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "strictPropertyInitialization": false,
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -30,4 +31,5 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   }
+  
 }

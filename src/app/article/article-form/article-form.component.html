@@ -1,0 +1,57 @@
+<div>
+    <h3>Ajouter un Article</h3>
+</div>
+<form #form="ngForm" (submit)="onSubmit(form)" 
+    [class.submitted]="service.formSubmitted" novalidate
+    autocomplete="off">
+    <input type="hidden" name="idArticle" [value]="service.formData.idArticle">
+    <div class="form-group">
+        <label class="form-label">Code</label> 
+        <input class="form-control" #codeArticle="ngModel" name="codeArticle" 
+        [(ngModel)]="service.formData.codeArticle"
+        required >
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Description</label> 
+        <input class="form-control" #description="ngModel" name="description"
+         [(ngModel)]="service.formData.description">
+    </div>
+
+    <div class="row">
+        <div class="form-group mb-3 col-6">
+            <label class="form-label">quantite</label> 
+            <input class="form-control" #quantite="ngModel" name="quantite"
+             [(ngModel)]="service.formData.quantite"
+             required>
+        </div>
+    
+        <div class="form-group mn-3 col-6">
+            <label class="form-label">quantite minimale</label> 
+            <input class="form-control" #quantiteMin="ngModel" name="quantiteMin"
+             [(ngModel)]="service.formData.quantiteMin"
+             required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Prix Unitaire</label> 
+        <input class="form-control" #prixUnit="ngModel" name="prixUnit"
+         [(ngModel)]="service.formData.prixUnit" required>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">date de peremption</label> 
+        <input class="form-control" placeholder="AAAA-MM-JJ"
+         #datePeremption="ngModel" name="datePeremption" 
+         [(ngModel)]="service.formData.datePeremption"
+         required>
+    </div>
+
+    <p></p> 
+    <div class="d-grid">
+        <button type="submit" class="btn btn-lg btn-success">Ajouter</button>
+    </div>
+    <p class="mt-10"></p> 
+    </form> 
+    

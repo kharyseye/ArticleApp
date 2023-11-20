@@ -1,0 +1,41 @@
+<div class="bg-body-secondary text-center py-4 rounded-2">
+    <h2 class="display-6 fw-bold">Gestion des Articles</h2>
+</div>
+<div class="row mt-5">
+    <div class="col-5">
+        <app-article-form/>
+    </div>
+    <div class="col-7">
+        <h3>Liste des Articles</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Code</th>
+                    <th>Description</th>
+                    <th>Quantite</th>
+                    <th>QuantiteMin</th>
+                    <th>PrixU</th>
+                    <th>DatePeremp</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let art of service.list">
+                    <th scope="row">1</th>
+                    <td>{{art.codeArticle}}</td>
+                    <td>{{art.description}}</td>
+                    <td>{{art.quantite}}</td>
+                    <td>{{art.quantiteMin}}</td>
+                    <td>{{art.prixUnit}}</td>
+                    <td>{{art.datePeremption}}</td>
+                    <td>
+                        <i class="fa-regular fa-pen-to-square p-2" style="color: #18ec4d;" (click)="populateForm(art)"></i>
+                        <i class="fa-regular fa-trash-can" style="color: #e10e0e;" (click)="onDelete(art.idArticle)"></i>
+                    </td>
+                   
+                </tr>
+                </tbody>
+        </table>
+    </div>
+</div>
